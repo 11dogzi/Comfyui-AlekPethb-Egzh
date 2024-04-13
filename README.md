@@ -14,6 +14,6 @@ Installation
 画板节点来自于[AlekPet项目](https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet)
 仅做中文翻译
 
-![界面展示](image/jiemian1.png "界面1") ![细节修复](image/jiemian1.png "界面1")    
+![界面展示](image/jiemian1.png "界面1")    
 
-![界面展示](image/jiemian1.png "界面2") ![细节修复](image/jiemian2.png "界面2")
+![界面展示](image/jiemian1.png "界面2")    
