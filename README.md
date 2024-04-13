@@ -6,7 +6,7 @@ Installation
 ```cd /path/to/your/ComfyUI/custom_nodes```
 
 将/path/to/your/ComfyUI替换为您的ComfyUI项目所在的实际路径。   
-接下来，克隆ergouzi-DGNJD仓库：   
+接下来，克隆Comfyui-AlekPethb-Egzh仓库：   
 
 ```git clone https://github.com/11dogzi/Comfyui-AlekPethb-Egzh.git```
       
