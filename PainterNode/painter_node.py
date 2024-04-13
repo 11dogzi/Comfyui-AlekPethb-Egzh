@@ -19,7 +19,35 @@ extension_folder = os.path.dirname(os.path.realpath(__file__))
 folder_web = os.path.join(os.path.dirname(os.path.realpath(__main__.__file__)), "web")
 folder_web_extensions = os.path.join(folder_web, "extensions")
 folder__web_lib = os.path.join(folder_web, 'lib')
-extension_dirs = ["EG_HB_ZWB",]
+extension_dirs = ["EG_HB_ZH",]
+
+
+python = sys.executable
+
+
+extentions_folder = os.path.join(os.path.dirname(os.path.realpath(__main__.__file__)),
+                                 "web" + os.sep + "extensions" + os.sep + "EG_HB_ZH")
+javascript_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), "js")
+
+if not os.path.exists(extentions_folder):
+    print('Making the "web\extensions\EG_HB_ZH" folder')
+    os.mkdir(extentions_folder)
+
+result = filecmp.dircmp(javascript_folder, extentions_folder)
+
+if result.left_only or result.diff_files:
+    print('Update to javascripts files detected')
+    file_list = list(result.left_only)
+    file_list.extend(x for x in result.diff_files if x not in file_list)
+
+    for file in file_list:
+        print(f'Copying {file} to extensions folder')
+        src_file = os.path.join(javascript_folder, file)
+        dst_file = os.path.join(extentions_folder, file)
+        if os.path.exists(dst_file):
+            os.remove(dst_file)
+        
+        shutil.copy(src_file, dst_file)
 #
 DEBUG = False
 NODE_CLASS_MAPPINGS = {}
@@ -298,7 +326,7 @@ class PainterNodeZWB(object):
     RETURN_TYPES = ("IMAGE", "MASK")
     FUNCTION = "painter_execute"
 
-    CATEGORY = "2🐕/AlekPet画板中文版"
+    CATEGORY = "AlekPet画板2🐕中文版"
 
     def painter_execute(self, image):
         image_path = folder_paths.get_annotated_filepath(image)
