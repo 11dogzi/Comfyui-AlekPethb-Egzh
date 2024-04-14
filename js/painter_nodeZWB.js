@@ -786,7 +786,7 @@ class Painter {
         switch (typeEvent) {
           case "img_load":
             this.bgImageFile.func = (img) => {
-              if (confirm("Change canvas size equal image?")) {
+                if (confirm("更改画布大小以适应图像吗？")) {
                 this.setCanvasSize(img.width, img.height);
               }
 
@@ -819,7 +819,7 @@ class Painter {
         let inputSize;
         let correct = false;
         while (!correct) {
-          inputSize = +prompt(`Enter canvas ${prop}:`, defaultVal);
+          inputSize = +prompt(`输入画布 ${prop}:`, defaultVal);
           if (
             Number(inputSize) === inputSize &&
             inputSize % 1 === 0 &&
@@ -831,8 +831,8 @@ class Painter {
         }
       }
 
-      let width = checkSized("width", this.currentCanvasSize.width),
-        height = checkSized("height", this.currentCanvasSize.height);
+      let width = checkSized("宽度", this.currentCanvasSize.width),
+        height = checkSized("高度", this.currentCanvasSize.height);
 
       this.setCanvasSize(width, height);
       this.uploadPaintFile(this.node.name);
