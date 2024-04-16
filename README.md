@@ -16,4 +16,4 @@ Installation
 
 ![界面展示](image/jiemian1.png "界面1")    
 
-![界面展示](image/jiemian1.png "界面2")    
+![界面展示](image/jiemian2.png "界面2")    
